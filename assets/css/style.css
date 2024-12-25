@@ -1,69 +1,102 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    outline: none;
     box-sizing: border-box;
-    text-decoration: none;
-    list-style: none;
-  }
+}
 
-html,
 body {
     font-family: "Open Sans", sans-serif;
-    overflow-x: hidden;
+    background-color: #f5f5f5;
     padding: 50px;
 }
 
-.section1{
+.carousel {
     display: flex;
-    gap:20px;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
 
+.section1 {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    width: calc(100% - 80px); /* Chiều rộng trừ khoảng cách 2 nút */
+    padding-bottom: 10px;
 }
 
 .section1 > div {
     display: flex;
-    
-    
+    flex: 0 0 calc((100% / 3) - 20px); /* Chỉ hiển thị 3 item */
 }
 
-.content{
+.content {
     width: 250px;
     padding: 20px;
-    border-top-right-radius: 10px; 
-    border-bottom-right-radius: 10px; 
-    border-right: 2px solid brown;    
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-right: 2px solid brown;
     background-color: #FCD;
-
 }
 
-.expired{
+.expired {
     font-weight: 700;
     font-size: 14px;
 }
 
-.mainContent{
+.mainContent {
     font-weight: bold;
     color: brown;
     margin-bottom: 10px;
     font-size: 16px;
 }
 
-.button{
+.button {
     width: 100px;
-    border-top-left-radius: 10px; 
-    border-bottom-left-radius: 10px; 
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     background-color: #FCD;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-button{
+button {
     padding: 10px 20px;
     border-radius: 50px;
     background-color: brown;
     color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+    z-index: 10;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+.carousel:hover .arrow {
+    display: block;
 }
